@@ -22,3 +22,5 @@ android.ndk = 25b
 
 android.allow_backup = True
 android.private_storage = False
+android.build_tools_version = 33.0.2
+android.sdk = 33
