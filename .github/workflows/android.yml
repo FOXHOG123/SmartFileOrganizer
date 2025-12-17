@@ -26,7 +26,7 @@ jobs:
           libffi-dev libssl-dev \
           autoconf automake libtool \
           build-essential ccache \
-          libncurses5 libstdc++6
+          libncurses-dev libstdc++6
 
     - name: Install Buildozer
       run: |
