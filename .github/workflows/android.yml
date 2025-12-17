@@ -45,6 +45,12 @@ jobs:
         export ANDROID_HOME=$HOME/.buildozer/android/platform/android-sdk
         export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH
         yes | sdkmanager --licenses
+    - name: Fix sdkmanager legacy path for Buildozer
+      run: |
+        export ANDROID_SDK_ROOT=$HOME/.buildozer/android/platform/android-sdk
+        mkdir -p $ANDROID_SDK_ROOT/tools/bin
+        ln -sf $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager \
+               $ANDROID_SDK_ROOT/tools/bin/sdkmanager
 
     - name: Build APK
       run: |
